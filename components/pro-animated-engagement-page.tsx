@@ -309,7 +309,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
             const countdownSection = document.querySelector('section[class*="py-12"]');
             countdownSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }}
-          className="absolute bottom-14 left-2 flex flex-col items-center gap-3 z-20 cursor-pointer group"
+          className="absolute bottom-11 left-2 flex flex-col items-center gap-3 z-20 cursor-pointer group"
           initial="hidden"
           animate="visible"
           variants={flyFromLeft}

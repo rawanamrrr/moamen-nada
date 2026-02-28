@@ -44,12 +44,29 @@ export default function Home() {
       img.src = "/invitation-design.png?v=2"
       img.onload = handleImageLoad
 
-      // Preload the main invitation video
+      // Aggressive video preloading using a hidden video element
+      const video = document.createElement("video")
+      video.style.display = "none"
+      video.preload = "auto"
+      video.muted = true
+      video.playsInline = true
+      video.src = "/invitation-design.mp4"
+      
+      // Additional link preload with high priority
       const videoLink = document.createElement("link")
       videoLink.rel = "preload"
       videoLink.as = "video"
       videoLink.href = "/invitation-design.mp4"
+      // @ts-ignore - fetchpriority is a newer attribute
+      videoLink.fetchpriority = "high"
+      
       document.head.appendChild(videoLink)
+      document.body.appendChild(video)
+
+      return () => {
+        if (document.head.contains(videoLink)) document.head.removeChild(videoLink)
+        if (document.body.contains(video)) document.body.removeChild(video)
+      }
     }
   }, [mounted, handleImageLoad])
 
