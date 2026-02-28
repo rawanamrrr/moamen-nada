@@ -50,7 +50,9 @@ export default function Home() {
       video.preload = "auto"
       video.muted = true
       video.playsInline = true
+      video.crossOrigin = "anonymous"
       video.src = "/invitation-design.mp4"
+      video.load()
       
       // Additional link preload with high priority
       const videoLink = document.createElement("link")
@@ -59,11 +61,24 @@ export default function Home() {
       videoLink.href = "/invitation-design.mp4"
       // @ts-ignore - fetchpriority is a newer attribute
       videoLink.fetchpriority = "high"
+
+      // Warm up the cache with a small range request (helps on some browsers/CDNs)
+      // This is safe even if the server doesn't support ranges; it will simply fetch normally.
+      const abortController = new AbortController()
+      fetch("/invitation-design.mp4", {
+        method: "GET",
+        headers: { Range: "bytes=0-1048575" },
+        signal: abortController.signal,
+        cache: "force-cache",
+      }).catch(() => {
+        // Ignore warm-up failures
+      })
       
       document.head.appendChild(videoLink)
       document.body.appendChild(video)
 
       return () => {
+        abortController.abort()
         if (document.head.contains(videoLink)) document.head.removeChild(videoLink)
         if (document.body.contains(video)) document.body.removeChild(video)
       }

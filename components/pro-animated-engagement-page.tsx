@@ -199,6 +199,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
   const { language } = useLanguage()
   const [mounted, setMounted] = useState(false)
   const [imageLoaded, setImageLoaded] = useState(false)
+  const [videoReady, setVideoReady] = useState(false)
   const [gifHasPlayed, setGifHasPlayed] = useState(false)
   const [gifPreloaded, setGifPreloaded] = useState(false)
   const gifRef = useRef<HTMLImageElement>(null)
@@ -240,6 +241,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
       setGifHasPlayed(true);
       // Ensure the page is at the top when the intro finishes
       window.scrollTo(0, 0);
+      setVideoReady(false)
     }
   }, [introFinished]);
 
@@ -280,22 +282,17 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
                 key="invitation-video"
                 src="/invitation-design.mp4"
                 className="w-full h-auto object-contain"
+                style={{ opacity: videoReady ? 1 : 0, transition: 'opacity 200ms ease' }}
                 autoPlay
                 muted
                 playsInline
+                preload="auto"
+                // @ts-ignore - fetchpriority is a newer attribute
+                fetchPriority="high"
                 onLoadedData={handleImageLoad}
-                poster="/invitation-design.png"
+                onCanPlay={() => setVideoReady(true)}
+                onPlaying={() => setVideoReady(true)}
               />
-              
-              {/* Minimal loading state */}
-              {!imageLoaded && (
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-6 h-6 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
-                    <span className="text-sm text-muted-foreground">{t('loading')}</span>
-                  </div>
-                </div>
-              )}
             </div>
           )}
         </motion.div>
