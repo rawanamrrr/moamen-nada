@@ -208,7 +208,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
   const pathY1 = useTransform(scrollYProgress, [0, 0.5], [0, 20])
   const pathY2 = useTransform(scrollYProgress, [0, 0.5], [0, 40])
 
-  const eventDate = new Date("2026-04-03T19:00:00");
+  const eventDate = new Date("2026-04-03T18:30:00");
   const formattedDate = formatDate(eventDate, language);
   const formattedTime = formatTime(eventDate, language);
 
@@ -390,7 +390,7 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
           </div>
 
           <div>
-            <CountdownTimer targetDate={new Date("2026-04-03T19:00:00")} />
+            <CountdownTimer targetDate={new Date("2026-04-03T18:30:00")} />
           </div>
         </div>
       </section>
@@ -623,13 +623,22 @@ export default function ProAnimatedEngagementPage({ onImageLoad, introFinished }
             transition={{ duration: 0.6 }}
             className="mb-2"
           >
-            <Image 
-              src="/letters.png" 
-              alt="Letters" 
-              width={250} 
-              height={200} 
-              className="object-contain"
-            />
+            <div className="flex items-center justify-center gap-3 sm:gap-6 px-2">
+              <Image 
+                src="/letters.png" 
+                alt="Letters" 
+                width={300} 
+                height={240} 
+                className="object-contain w-[180px] xs:w-[200px] sm:w-[300px] h-auto"
+              />
+              <Image 
+                src="/couple-image.jpg" 
+                alt="Couple" 
+                width={250} 
+                height={250} 
+                className="object-cover w-[160px] xs:w-[180px] sm:w-[250px] h-[160px] xs:h-[180px] sm:h-[250px] rounded-2xl shadow-md"
+              />
+            </div>
           </motion.div>
           <motion.p 
             className="font-luxury text-3xl md:text-4xl text-foreground mb-4 italic leading-relaxed"

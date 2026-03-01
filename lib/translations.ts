@@ -91,8 +91,8 @@ export const translations: Translations = {
     ar: '٣ أبريل ٢٠٢٦',
   },
   time: {
-    en: '7:00 PM',
-    ar: '٧:٠٠ مساءً',
+    en: '6:30 PM',
+    ar: '٦:٣٠ مساءً',
   },
   location: {
     en: 'Royal Plaza, Corniche Al-Maadi',
