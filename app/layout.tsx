@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Join us in celebrating Momen & Nada's engagement",
     images: [
       {
-        url: "https://momen-nada.digitivaa.com/invitation-design.png",
+        url: "https://momen-nada.digitivaa.com/preview.jpg",
         width: 768,
         height: 1365,
         alt: "Momen & Nada Engagement Invitation",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Momen & Nada - Engagement Celebration",
     description: "Join us in celebrating Momen & Nada's engagement",
-    images: ["https://momen-nada.digitivaa.com/invitation-design.png"],
+    images: ["https://momen-nada.digitivaa.com/preview.jpg"],
   },
   icons: {
     icon: "/invitation-design.png",
@@ -70,9 +70,9 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Momen & Nada - Engagement Celebration" />
         <meta property="og:description" content="Join us in celebrating Momen & Nada's engagement" />
-        <meta property="og:image" content="https://momen-nada.digitivaa.com/invitation-design.png" />
-        <meta property="og:image:secure_url" content="https://momen-nada.digitivaa.com/invitation-design.png" />
-        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image" content="https://momen-nada.digitivaa.com/preview.jpg" />
+        <meta property="og:image:secure_url" content="https://momen-nada.digitivaa.com/preview.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="768" />
         <meta property="og:image:height" content="1365" />
         <meta property="og:image:alt" content="Momen & Nada Engagement Invitation" />
@@ -83,14 +83,14 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Momen & Nada - Engagement Celebration" />
         <meta name="twitter:description" content="Join us in celebrating Momen & Nada's engagement" />
-        <meta name="twitter:image" content="https://momen-nada.digitivaa.com/invitation-design.png" />
+        <meta name="twitter:image" content="https://momen-nada.digitivaa.com/preview.jpg" />
 
-        {/* Preload PNG with high priority to eliminate lag on Netlify */}
+        {/* Preload preview image with high priority */}
         <link
           rel="preload"
-          href="/invitation-design.png"
+          href="/preview.jpg"
           as="image"
-          type="image/png"
+          type="image/jpeg"
         />
         {/* Preload video and poster for faster intro */}
         <link
