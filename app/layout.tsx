@@ -18,19 +18,19 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://moamen-nada.digitivaa.com"),
+  metadataBase: new URL("https://momen-nada.digitivaa.com"),
   title: "Momen & Nada - Engagement Celebration",
   description: "Join us in celebrating Momen & Nada's engagement",
   generator: "Digitiva",
   openGraph: {
-    url: "https://moamen-nada.digitivaa.com/",
+    url: "https://momen-nada.digitivaa.com/",
     type: "website",
     siteName: "Momen & Nada Engagement",
     title: "Momen & Nada - Engagement Celebration",
     description: "Join us in celebrating Momen & Nada's engagement",
     images: [
       {
-        url: "https://moamen-nada.digitivaa.com/invitation-design.png?t=20241220v2",
+        url: "https://momen-nada.digitivaa.com/invitation-design.png",
         width: 768,
         height: 1365,
         alt: "Momen & Nada Engagement Invitation",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Momen & Nada - Engagement Celebration",
     description: "Join us in celebrating Momen & Nada's engagement",
-    images: ["https://moamen-nada.digitivaa.com/invitation-design.png?t=20241220"],
+    images: ["https://momen-nada.digitivaa.com/invitation-design.png"],
   },
   icons: {
     icon: "/invitation-design.png",
@@ -66,25 +66,25 @@ export default function RootLayout({
           - Current: 768x1365px (portrait) - may work but not optimal
           - Format: PNG or JPEG (not WebP)
         */}
-        <meta property="og:url" content="https://moamen-nada.digitivaa.com/" />
+        <meta property="og:url" content="https://momen-nada.digitivaa.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Momen & Nada - Engagement Celebration" />
         <meta property="og:description" content="Join us in celebrating Momen & Nada's engagement" />
-        <meta property="og:image" content="https://moamen-nada.digitivaa.com/invitation-design.png?t=20241220v2" />
-        <meta property="og:image:secure_url" content="https://moamen-nada.digitivaa.com/invitation-design.png?t=20241220v2" />
+        <meta property="og:image" content="https://momen-nada.digitivaa.com/invitation-design.png" />
+        <meta property="og:image:secure_url" content="https://momen-nada.digitivaa.com/invitation-design.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="768" />
         <meta property="og:image:height" content="1365" />
         <meta property="og:image:alt" content="Momen & Nada Engagement Invitation" />
         <meta property="og:site_name" content="Momen & Nada Engagement" />
         <meta property="og:locale" content="en_US" />
-        
+
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Momen & Nada - Engagement Celebration" />
         <meta name="twitter:description" content="Join us in celebrating Momen & Nada's engagement" />
-        <meta name="twitter:image" content="https://moamen-nada.digitivaa.com/invitation-design.png?t=20241220v2" />
-        
+        <meta name="twitter:image" content="https://momen-nada.digitivaa.com/invitation-design.png" />
+
         {/* Preload PNG with high priority to eliminate lag on Netlify */}
         <link
           rel="preload"
